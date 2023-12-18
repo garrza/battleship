@@ -20,3 +20,5 @@ const shipTypes = [
     size: 2,
   },
 ];
+
+export default shipTypes;

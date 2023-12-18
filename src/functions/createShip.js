@@ -1,6 +1,6 @@
-
-
-const createShip = (name, position) => {
+const createShip = (shipType, position) => {
+  const name = shipType.name;
+  const size = shipType.size;
   let hits = [];
 
   const hit = (hitIndex) => {
@@ -12,7 +12,7 @@ const createShip = (name, position) => {
     return hits.length === position.length;
   };
 
-  return { name, position, hits, hit, isSank };
+  return { name, size, position, hits, hit, isSank };
 };
 
 export default createShip;

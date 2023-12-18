@@ -1,14 +1,18 @@
 import createShip from "../functions/createShip";
+import shipTypes from "../helpers/shipTypes";
 
 describe("createShip", () => {
-  const ship = createShip("Destroyer", [0, 1, 2]);
+  const ship = createShip(shipTypes[0], [0, 1, 2]);
 
   test("returns an object", () => {
     expect(typeof ship).toBe("object");
   });
-
   test("has a name property", () => {
     expect(ship).toHaveProperty("name");
+  });
+
+  test("has a size property", () => {
+    expect(ship).toHaveProperty("size");
   });
 
   test("has a position property", () => {
