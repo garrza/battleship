@@ -1,4 +1,6 @@
-const gameboardView = () => {
+// Create complete display of game using DOM
+
+const init = () => {
   const renderCell = (cell, index) => {
     const cellElement = document.createElement("div");
     cellElement.classList.add("cell");
@@ -24,10 +26,25 @@ const gameboardView = () => {
     return boardElement;
   };
 
+  const renderShips = (ships) => {
+    const shipsElement = document.createElement("div");
+    shipsElement.classList.add("ships");
+    ships.forEach((ship) => {
+      // Create ship element and add its img
+      const shipElement = document.createElement("div");
+      shipElement.classList.add("ship");
+      shipElement.style.width = `${ship.length * 50}px`;
+      shipElement.style.height = "50px";
+      shipElement.style.backgroundImage = `components/images/${ship.name}.png`;
+    });
+    return shipsElement;
+  };
+
   const renderGameboard = (gameboard) => {
     const gameboardElement = document.createElement("div");
     gameboardElement.classList.add("gameboard");
     gameboardElement.appendChild(renderBoard(gameboard.board));
+    gameboardElement.appendChild(renderShips(gameboard.ships));
     return gameboardElement;
   };
 
@@ -48,4 +65,4 @@ const gameboardView = () => {
   return { render };
 };
 
-export default gameboardView;
+export default init;
