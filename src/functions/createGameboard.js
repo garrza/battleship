@@ -11,22 +11,23 @@ const createGameboard = () => {
     }
   };
 
-  const placeShip = (ship, position) => {
-    position.forEach((index) => {
-      board[index].ship = ship;
+  const placeShip = (newShip) => {
+    newShip.position.forEach((index) => {
+      board[index].ship = newShip;
     });
   };
 
   const receiveAttack = (index) => {
     if (board[index].ship) {
       board[index].ship.hit(index);
+      board[index].ship = null;
     }
     board[index].hit = true;
   };
 
   const isAllSank = () => {
     return board.every((cell) => {
-      return cell.ship === null || cell.ship.isSank();
+      return cell.ship == null;
     });
   };
 

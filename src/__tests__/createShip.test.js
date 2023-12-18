@@ -51,8 +51,6 @@ describe("createShip", () => {
   test("isSank method returns true if ship is sank", () => {
     ship.hit(1);
     ship.hit(2);
-    console.log(ship.hits.length);
-    console.log(ship.position.length);
     expect(ship.isSank()).toBe(true);
   });
 });
