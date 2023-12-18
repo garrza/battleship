@@ -20,14 +20,13 @@ const createGameboard = () => {
   const receiveAttack = (index) => {
     if (board[index].ship) {
       board[index].ship.hit(index);
-      board[index].ship = "beenHit";
     }
     board[index].hit = true;
   };
 
   const isAllSank = () => {
     return board.every((cell) => {
-      return cell.ship == null || cell.ship == "beenHit";
+      return cell.ship && !cell.hit ? false : true;
     });
   };
 

@@ -7,11 +7,11 @@ const gameboardView = () => {
     if (cell.ship) {
       cellElement.classList.add("ship");
     }
+    if (cell.ship && cell.hit) {
+      cellElement.classList.add("ship-hit");
+    }
     if (cell.hit) {
       cellElement.classList.add("hit");
-    }
-    if (cell.ship == "beenHit") {
-      cellElement.classList.add("beenHit");
     }
     cellElement.setAttribute("data-index", index);
     return cellElement;
