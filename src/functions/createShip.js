@@ -1,3 +1,5 @@
+
+
 const createShip = (name, position) => {
   let hits = [];
 
