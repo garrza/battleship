@@ -1,4 +1,4 @@
-export const elements = {
+const elements = {
   playerGameboard: document.querySelector(".player-gameboard"),
   computerGameboard: document.querySelector(".computer-gameboard"),
   playerGrid: document.querySelector(".player-grid"),
@@ -12,3 +12,5 @@ export const elements = {
   fleetDraggable: document.querySelector(".fleet-draggable"),
   fleetInfo: document.querySelector(".fleet-info"),
 };
+
+export { elements };
