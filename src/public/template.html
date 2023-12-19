@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Battleship game" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <title>🚢 Battleship 🚢</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="title">
+        🚢 Battleship 🚢
+        <a href="https://github.com/garrza">
+          <i class="fab fa-github-alt" aria-hidden="true"></i>
+        </a>
+      </h1>
+    </header>
+    <main>
+      <div class="game-container">
+        <div class="gameboards-container">
+          <!-- gameboard-p1 -->
+          <div class="p1-gameboard gameboard">
+            <h1 class="grid-title">My Fleet</h1>
+            <div class="grid p1-grid"></div>
+          </div>
+          <!-- gameboard-p2 -->
+          <div class="p2-gameboard gameboard grid-disabled hide">
+            <h1 class="grid-title">Enemy Fleet</h1>
+            <div class="grid p2-grid"></div>
+          </div>
+        </div>
+        <div class="fleet-container slide-in">
+          <h1>Place Fleet</h1>
+          <button class="fleet-autoplace show">Auto-Place</button>
+          <!-- fleet for drag-n-drop -->
+          <span class="fleet-info show"
+            >Drag and drop (Double click to rotate)</span
+          >
+          <div class="fleet-draggable"></div>
+          <!-- START GAME -->
+          <button class="start">Start</button>
+        </div>
+      </div>
+      <div class="info-container">
+        <h1 class="info-text"></h1>
+        <button class="play-again">Play Again?</button>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 import createShip from "../functions/createShip";
-import shipTypes from "../helpers/shipTypes";
+import shipTypes from "../../helpers/shipTypes";
 
 describe("createShip", () => {
   const ship = createShip(shipTypes[0], [0, 1, 2]);
