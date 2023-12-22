@@ -14,10 +14,10 @@ const createGame = () => {
   const drag = createDrag(player, playerBoard);
 
   const resetGame = () => {
-    player.resetFleet;
-    computer.resetFleet;
-    playerBoard.resetBoard;
-    computerBoard.resetBoard;
+    player.resetFleet();
+    computer.resetFleet();
+    playerBoard.reset();
+    computerBoard.reset();
   };
 
   const addRotateEventListeners = () => {
@@ -96,7 +96,7 @@ const createGame = () => {
 
   const playAgain = () => {
     resetGame();
-    resetFleet();
+    renderGrids();
     gameboardView.playAgain();
     renderFleet();
   };
