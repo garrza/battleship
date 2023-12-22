@@ -25,9 +25,9 @@ const createPlayer = (type = "human") => {
         const [y, x] = coord;
         return (
           y >= 0 &&
-          y <= 10 &&
+          y <= 9 &&
           x >= 0 &&
-          x <= 10 &&
+          x <= 9 &&
           enemyBoard.getBoard()[y][x] !== "miss" &&
           enemyBoard.getBoard()[y][x] !== "hit"
         );

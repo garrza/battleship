@@ -1,18 +1,26 @@
-const createShip = (shipType, position) => {
-  const name = shipType.name;
-  const size = shipType.size;
-  let hits = [];
+import { SHIP_LENGTHS } from "../helpers/helpers";
 
-  const hit = (hitIndex) => {
-    hits.push(hitIndex);
-    isSank();
+const createShip = (type) => {
+  const id = type;
+  const length = SHIP_LENGTHS[type];
+  let direction = "horizontal";
+
+  const getDirection = () => direction;
+  const changeDirection = () => {
+    direction === "horizontal"
+      ? (direction = "vertical")
+      : (direction = "horizontal");
   };
 
-  const isSank = () => {
-    return hits.length === position.length;
-  };
+  // hit(i)
+  const hits = Array(length).fill(null);
+  const hit = (i) => (hits[i] = "hit");
+  const getHits = () => hits;
 
-  return { name, size, position, hits, hit, isSank };
+  // isSunk
+  const isSunk = () => hits.every((h) => h === "hit");
+
+  return { id, length, hit, getHits, isSunk, getDirection, changeDirection };
 };
 
 export default createShip;
