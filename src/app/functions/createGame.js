@@ -35,7 +35,7 @@ const createGame = () => {
   const renderFleet = () => {
     gameboardView.renderFleet(player.getFleet());
     drag.addDragAndDropEvenListeners();
-    rotateEventListeners();
+    addRotateEventListeners();
   };
 
   const addGridEventListeners = () => {

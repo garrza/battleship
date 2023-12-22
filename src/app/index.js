@@ -12,7 +12,7 @@ elements.autoPlaceBtn.addEventListener("click", (e) => {
 });
 
 elements.startBtn.addEventListener("click", (e) => {
-  console.log("STAR GAMET");
+  console.log("START GAME");
   game.startGame();
 });
 

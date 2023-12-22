@@ -1,11 +1,11 @@
 import elements from "./base";
 
-const gameBoardView = () => {
+const gameboardView = (() => {
   const renderCell = (y, x, status) =>
     `<div class="grid-cell cell-${y}-${x} ${status}" data-y='${y}' data-x='${x}'></div>`;
 
   const clearGrid = (parent) => {
-    grid.textContent = "";
+    parent.textContent = "";
   };
 
   const renderGrid = (parent, gameboard, type) => {
@@ -90,6 +90,6 @@ const gameBoardView = () => {
     renderWinner,
     playAgain,
   };
-};
+})();
 
-export default gameBoardView;
+export default gameboardView;
