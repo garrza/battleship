@@ -1,6 +1,5 @@
 import createGame from "./functions/createGame";
-import { elements } from "./views/base";
-import "../styles/styles.css";
+import elements from "./views/base";
 
 let game = createGame();
 

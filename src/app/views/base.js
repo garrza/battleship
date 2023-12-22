@@ -13,4 +13,4 @@ const elements = {
   fleetInfo: document.querySelector(".fleet-info"),
 };
 
-export { elements };
+export default elements;

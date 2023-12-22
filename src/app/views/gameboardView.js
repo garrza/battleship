@@ -1,16 +1,15 @@
-import elements from "./views/base";
+import elements from "./base";
 
 const gameBoardView = () => {
-  const renderCell = (x, y, status) => {
-    `<div class="grid-cell cell-${x}-${y} ${status}" data-x="${x}" data-y="${y}"></div>`;
-  };
+  const renderCell = (y, x, status) =>
+    `<div class="grid-cell cell-${y}-${x} ${status}" data-y='${y}' data-x='${x}'></div>`;
 
-  const clearGrid = (grid) => {
+  const clearGrid = (parent) => {
     grid.textContent = "";
   };
 
-  const renderGrid = (grid, gameboard, type) => {
-    clearGrid(grid);
+  const renderGrid = (parent, gameboard, type) => {
+    clearGrid(parent);
     const board = gameboard.getBoard();
     const length = board.length;
     let grid = "";
@@ -29,7 +28,7 @@ const gameBoardView = () => {
         grid += renderCell(i, j, status);
       }
     }
-    grid.insertAdjacentHTML("afterbegin", grid);
+    parent.insertAdjacentHTML("afterbegin", grid);
   };
 
   const renderFleet = (fleet) => {

@@ -1,5 +1,5 @@
-import { elements } from "../../views/base";
-import gameboardView from "../../views/gameboardView";
+import elements from "../views/base";
+import gameboardView from "../views/gameboardView";
 
 const createDrag = (player, playerBoard) => {
   let draggedShip;

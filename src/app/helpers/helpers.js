@@ -23,6 +23,6 @@ export const randCoords = (size = 10) => [rand(size), rand(size)];
 
 export const createFleet = (types) => {
   const fleet = {};
-  types.forEach((type) => (fleet[type] = Ship(type)));
+  types.forEach((type) => (fleet[type] = createShip(type)));
   return fleet;
 };

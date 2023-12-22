@@ -81,6 +81,13 @@ const createGame = () => {
   };
 
   const autoPlace = () => {
+    playerBoard.reset();
+    playerBoard.autoPlaceFleet(player.getFleet());
+    renderGrids();
+    gameboardView.autoPlace();
+  };
+
+  const startGame = () => {
     addGridEventListeners();
     if (computer.getType() === "computer")
       computerBoard.autoPlaceFleet(computer.getFleet());
