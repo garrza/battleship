@@ -1,0 +1,72 @@
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+  }
+  
+  // Enter/Exit
+  @mixin slide-in-out {
+    &.slide-in {
+      transform: translateX(0);
+      opacity: 1;
+      z-index: 0;
+      transition: all 0.7s ease;
+    }
+  
+    &.slide-out {
+      transform: translateY(-8*cell-size('default'));
+      opacity: 0;
+      transition: all 0.7s ease;
+      z-index: -1;
+  
+      @include media('small') {
+        transform: translateX(-8*cell-size('small'));
+      }
+      @include media('medium') {
+        transform: translateX(-8*cell-size('medium'));
+      }
+      @include media('large') {
+        transform: translateX(-8*cell-size('large'));
+      }
+      @include media('huge') {
+        transform: translateX(-8*cell-size('huge'));
+      }
+    }
+  }
+  
+  @mixin hide {
+    &.hide {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+  @mixin show {
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  // Media Queries
+  @mixin media($bp) {
+    $bn: #{breakpoint($bp)};
+    @media (min-width: $bn) {
+      @content;
+    }
+  }
+
+  @mixin responsive-cell-size($mod: 1) {
+    @include size(cell-size('default')*$mod);
+  
+    @each $key, $value in $breakpoints {
+      @include media($key) {
+        @include size(cell-size($key)*$mod);
+      }
+    }
+  }
+  
+  // Box Shadow
+  @mixin box-shadow($size, $shadow) {
+    -webkit-box-shadow: $size $shadow;
+    -moz-box-shadow: $size $shadow;
+    box-shadow: $size $shadow;
+  }

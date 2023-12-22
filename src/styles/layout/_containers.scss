@@ -1,0 +1,187 @@
+.game-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    @include size(cell-size('default')*10, auto);
+  
+    @include media('small') {
+      flex-direction: row;
+      @include size(cell-size('small')*22, auto);
+    }
+    @include media('medium') {
+      flex-direction: row;
+      @include size(cell-size('medium')*22, auto);
+    }
+    @include media('large') {
+      flex-direction: row;
+      @include size(cell-size('large')*22, auto);
+    }
+    @include media('huge') {
+      flex-direction: row;
+      @include size(cell-size('huge')*22, auto);
+    }
+  }
+  
+  .fleet-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: text-color('secondary');
+    @include slide-in-out;
+  
+    top: cell-size('default')*13;
+    font-size: 1rem;
+    @include size(auto, cell-size('default')*7);
+  
+    @include media('small') {
+      top: 0;
+      right: cell-size('small')*3;
+      font-size: 1rem;
+      @include size(auto, cell-size('small')*12.5);
+    }
+    @include media('medium') {
+      top: 0;
+      right: cell-size('medium')*3;
+      font-size: 1.3rem;
+      @include size(auto, cell-size('medium')*12.5);
+    }
+    @include media('large') {
+      top: 0;
+      right: cell-size('large')*3;
+      font-size: 1.5rem;
+      @include size(cell-size('large')*7, cell-size('large')*13.5);
+    }
+    @include media('huge') {
+      top: 0;
+      right: cell-size('huge')*3;
+      font-size: 1.8rem;
+      @include size(cell-size('huge')*7, cell-size('huge')*13.5);
+    }
+  
+    & h1 {
+      font-size: inherit;
+    }
+  }
+  .fleet-info {
+    display: none;
+    font-size: 1rem;
+    color: inherit;
+    text-align: center;
+    @include show;
+    @include hide;
+    transition: opacity 1s ease;
+  
+    @include media('small') {
+      display: none;
+    }
+    @include media('medium') {
+      display: none;
+    }
+    @include media('large') {
+      display: inline-block;
+      @include size(cell-size('large')*7, auto);
+    }
+    @include media('huge') {
+      display: inline-block;
+      @include size(cell-size('huge')*7, auto);
+    }
+  }
+  
+  .fleet-draggable {
+    display: none;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: space-around;
+  
+    @include size(cell-size('default')*5.5, cell-size('default')*9.5);
+  
+    @include media('small') {
+      display: none;
+      @include size(cell-size('small')*5.5, cell-size('small')*9.5);
+    }
+    @include media('medium') {
+      display: none;
+      @include size(cell-size('medium')*5.5, cell-size('medium')*9.5);
+    }
+    @include media('large') {
+      display: flex;
+      @include size(cell-size('large')*5.5, cell-size('large')*9.5);
+    }
+    @include media('huge') {
+      display: flex;
+      @include size(cell-size('huge')*5.5, cell-size('huge')*9.5);
+    }
+  }
+  
+  .gameboards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1rem;
+    @include size(cell-size('default')*22, auto);
+  
+    @include media('small') {
+      flex-direction: row;
+      @include size(cell-size('small')*22, auto);
+    }
+    @include media('medium') {
+      flex-direction: row;
+      @include size(cell-size('medium')*22, auto);
+    }
+    @include media('large') {
+      flex-direction: row;
+      @include size(cell-size('large')*22, auto);
+    }
+    @include media('huge') {
+      flex-direction: row;
+      @include size(cell-size('huge')*22, auto);
+    }
+  }
+  .gameboard {
+    transition: all 1s ease;
+  }
+  .computer-gameboard {
+    @include hide;
+    @include show;
+  }
+  
+  .info-container {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: text-color('secondary');
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 2s ease;
+    @include size(100%);
+    @include show;
+    text-align: center;
+    font-size: 1.6rem;
+  
+    @include media('small') {
+      font-size: 1.8rem;
+    }
+    @include media('medium') {
+      font-size: 2.5rem;
+    }
+    @include media('large') {
+      font-size: 3rem;
+    }
+    @include media('huge') {
+      font-size: 3.5rem;
+    }
+  }

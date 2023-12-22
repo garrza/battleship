@@ -1,0 +1,37 @@
+.title {
+    font-size: 2.2rem;
+    margin: 1.5rem 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: text-color('primary');
+  
+    & a,
+    a:visited {
+      display: inline-block;
+      color: text-color('secondary');
+      font-size: 2rem;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        color: text-color('primary');
+        transform: rotate(360deg);
+      }
+    }
+  
+    @include media('small') {
+      font-size: 3rem;
+      margin: 2rem;
+    }
+    @include media('medium') {
+      font-size: 5rem;
+      margin: 2rem;
+    }
+    @include media('large') {
+      font-size: 5rem;
+      margin: 3rem;
+    }
+    @include media('huge') {
+      font-size: 5rem;
+      margin: 3.5rem;
+    }
+  }

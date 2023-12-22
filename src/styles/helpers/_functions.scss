@@ -1,0 +1,19 @@
+@function breakpoint($breakpoint-name) {
+    @return map-get($breakpoints, $breakpoint-name);
+  }
+  
+  @function cell-size($size) {
+    @return map-get($cell-sizes, $size);
+  }
+  
+  @function cell-color($color) {
+    @return map-get($cell-colors, $color);
+  }
+  
+  @function text-color($color) {
+    @return map-get($text-colors, $color);
+  }
+  
+  @function grid-border($color) {
+    @return map-get($grid-borders, $color);
+  }

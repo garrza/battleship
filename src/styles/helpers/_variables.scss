@@ -1,0 +1,43 @@
+$bg-color: #FFF2F1;
+$shadow-size: 0px 0px 5px 0px;
+
+$text-colors: ('primary': #A09BE7, 'secondary': #5F00BA);
+
+// GRID
+$grid-color: #B6C9BB;
+$grid-borders: (
+  'player': #B0FF92,
+  'computer':#D6FF79
+);
+
+// CELLS
+$cell-colors: ('bg': #B0FF92, 'hover': #D6FF79, 'border': #ffffff36);
+$cell-sizes: (
+  'default': 2rem,
+  'small': 1rem,
+  'medium': 2rem,
+  'large': 2.5rem,
+  'huge': 3rem
+);
+
+// CELL EVENTS
+$hit: radial-gradient(circle, #fff400 8%, #ba0505 55%);
+$miss: #0f3366;
+
+// SHIPS
+$destroyer-color: rgb(173, 20, 0);
+$destroyer-border: rgb(255, 8, 0);
+
+$submarine-color: rgb(196, 152, 11);
+$submarine-border: rgb(240, 209, 106);
+
+$cruiser-color: rgb(55, 158, 7);
+$cruiser-border: rgb(122, 240, 106);
+
+$battleship-color: rgb(51, 63, 236);
+$battleship-border: rgb(106, 137, 240);
+
+$carrier-color: rgb(70, 6, 153);
+$carrier-border: rgb(157, 106, 240);
+
+$breakpoints: ('small': 576px, 'medium': 768px, 'large': 992px, 'huge': 1200px);

@@ -1,0 +1,112 @@
+.grid-disabled {
+    transform: scale(0.8);
+    transition: all 1s ease;
+    opacity: 0.7;
+  }
+  
+  .grid {
+    box-sizing: content-box;
+    background-color: $grid-color;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(cell-size('default'), 1fr));
+  
+    @include media('small') {
+      grid-template-columns: repeat(auto-fit, minmax(cell-size('small'), 1fr));
+    }
+    @include media('medium') {
+      grid-template-columns: repeat(auto-fit, minmax(cell-size('medium'), 1fr));
+    }
+    @include media('large') {
+      grid-template-columns: repeat(auto-fit, minmax(cell-size('large'), 1fr));
+    }
+    @include media('huge') {
+      grid-template-columns: repeat(auto-fit, minmax(cell-size('huge'), 1fr));
+    }
+    @include responsive-cell-size(10);
+  
+    &-title {
+      font-size: 1rem;
+      margin: 0 0 0.5rem 0;
+      color: text-color('secondary');
+  
+      @include media('small') {
+        margin: 1rem 0;
+        font-size: 1rem;
+      }
+      @include media('medium') {
+        margin: 1rem 0;
+        font-size: 1.3rem;
+      }
+      @include media('large') {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+      }
+      @include media('huge') {
+        margin: 1rem 0;
+        font-size: 1.8rem;
+      }
+    }
+  
+    &-cell {
+      border: 1px solid cell-color('border');
+      @include responsive-cell-size;
+  
+      &:hover {
+        border-radius: 5px;
+      }
+    }
+  }
+  
+  .p1-grid {
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: grid-border('p1');
+    cursor: none;
+  
+    & .grid-cell:hover {
+      cursor: none;
+      background-color: cell-color('bg');
+      @include box-shadow($shadow-size, cell-color('bg'));
+    }
+  }
+  .p2-grid {
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: grid-border('p2');
+  
+    & .grid-cell:hover {
+      cursor: crosshair;
+      background-color: cell-color('hover');
+      @include box-shadow($shadow-size, cell-color('hover'));
+    }
+  }
+  
+  .hit {
+    background: $hit;
+    clip-path: polygon(
+      49% 0,
+      61% 19%,
+      100% 1%,
+      79% 36%,
+      97% 40%,
+      83% 53%,
+      96% 73%,
+      76% 74%,
+      80% 100%,
+      59% 79%,
+      46% 100%,
+      38% 81%,
+      0 100%,
+      19% 67%,
+      4% 62%,
+      19% 47%,
+      0 31%,
+      26% 30%,
+      13% 1%,
+      41% 21%
+    );
+  }
+  .miss {
+    background-color: $miss;
+  }
