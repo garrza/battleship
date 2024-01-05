@@ -25,7 +25,7 @@ const createGame = () => {
     ships.forEach((ship) => {
       ship.addEventListener("dblclick", (e) => {
         const shipElement = e.target.parentElement;
-        const ship = p1.getFleet()[shipElement.dataset.ship];
+        const ship = player.getFleet()[shipElement.dataset.ship];
         ship.changeDirection();
         shipElement.classList.toggle("vertical");
       });

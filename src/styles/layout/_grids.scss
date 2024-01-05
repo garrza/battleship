@@ -58,8 +58,8 @@
     }
   }
   
-  .p1-grid {
-    border: 2px solid;
+  .player-grid {
+    border: 2px solid blue;
     border-image-slice: 1;
     border-image-source: grid-border('p1');
     cursor: none;
@@ -70,8 +70,8 @@
       @include box-shadow($shadow-size, cell-color('bg'));
     }
   }
-  .p2-grid {
-    border: 2px solid;
+  .computer-grid {
+    border: 2px solid red;
     border-image-slice: 1;
     border-image-source: grid-border('p2');
   

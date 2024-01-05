@@ -10,11 +10,12 @@ const createDrag = (player, playerBoard) => {
 
   const dragStart = (e) => {
     draggedShip = e.target;
+    console.log(draggedShip);
   };
   const dragDrop = (e) => {
     const cell = e.target;
-    const playerShip = p1.getFleet()[draggedShip.dataset.ship];
-    const isHorizontal = p1Ship.getDirection() === "horizontal";
+    const playerShip = player.getFleet()[draggedShip.dataset.ship];
+    const isHorizontal = playerShip.getDirection() === "horizontal";
     const y = Number(cell.dataset.y) - (isHorizontal ? 0 : draggedShipIndex);
     const x = Number(cell.dataset.x) - (isHorizontal ? draggedShipIndex : 0);
 
