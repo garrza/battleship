@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Battleship game" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <title>Battleship</title>
+    <script defer="defer" src="main.%5BcontentHash%5D.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚢</text></svg>"
+    />
+  </head>
+  <body>
+    <header><h1 class="title">🚢 Battleship 🚢</h1></header>
+    <main>
+      <div class="game-container">
+        <div class="gameboards-container">
+          <div class="player-gameboard gameboard">
+            <h1 class="grid-title">My Fleet</h1>
+            <div class="grid player-grid"></div>
+          </div>
+          <div class="computer-gameboard gameboard grid-disabled hide">
+            <h1 class="grid-title">Enemy Fleet</h1>
+            <div class="grid computer-grid"></div>
+          </div>
+        </div>
+        <div class="fleet-container slide-in">
+          <h1>Place Fleet</h1>
+          <button class="fleet-autoplace show">Auto-Place</button>
+          <span class="fleet-info show"
+            >Drag and drop (Double click to rotate)</span
+          >
+          <div class="fleet-draggable"></div>
+          <button class="start">Start</button>
+        </div>
+      </div>
+      <div class="info-container">
+        <h1 class="info-text"></h1>
+        <button class="play-again">Play Again?</button>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Copyright © 2024 @garrza</p>
+      <a href="https://github.com/garrza">
+        <i class="fab fa-github" style="color: blue"></i>
+      </a>
+    </footer>
+  </body>
+</html>
